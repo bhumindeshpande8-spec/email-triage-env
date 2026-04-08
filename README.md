@@ -46,9 +46,12 @@ docker run email-triage
 🏆 Baseline AI Performance
 
 📊 Final Results:
+```
 Task 1 (Basic Accuracy):    80.00%
 Task 2 (Weighted Accuracy): 84.62%
 Task 3 (Penalized Score):   70.00%
+```
+---
 
 
 # ✨ "Wow" Features & Strategic Decisions 🧠
