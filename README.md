@@ -7,13 +7,6 @@ sdk: docker
 pinned: false
 ---
 
-
-
-
-
-
-
-
 # 📬 OpenM Environment: AI Email Triage
 
 ## 🏆 The Big Idea
@@ -45,7 +38,7 @@ This environment is fully containerized. To test the AI's baseline performance, 
 ```bash
 docker build -t email-triage .
 docker run email-triage
-
+```
 
 ✅ Run complete. Calculating scores against hardcoded rules...
 
@@ -56,3 +49,38 @@ docker run email-triage
 Task 1 (Basic Accuracy):    80.00%
 Task 2 (Weighted Accuracy): 84.62%
 Task 3 (Penalized Score):   70.00%
+
+
+# ✨ "Wow" Features & Strategic Decisions 🧠
+
+### 1️⃣ Safety First: Emergency Logic (Anti-Hallucination)
+Most AI models are "people-pleasers." 🚨  
+**Decision:** If a server is down, escalate & stay silent.  
+**Why it Wins:** Shows AI Safety & Judgment, not just logic.
+
+---
+
+### 2️⃣ JSON Sandboxing with Pydantic 🛠️
+AI loves rambling. We force strict JSON output.  
+**Decision:** Pydantic blocks unexpected formats to prevent crashes.  
+**Why it Wins:** Ensures Runtime Correctness & engineering maturity.
+
+---
+
+### 3️⃣ In-Context Feedback Loop ("Sticky Note" Method) 🔄
+No heavy RL needed—just smart in-context learning.  
+**Decision:** `metrics.py` writes a sticky note on rule violations; next AI task reads it.  
+**Why it Wins:** AI learns instantly like a human, no supercomputer required.
+
+---
+
+### 4️⃣ Resilience Engineering: Error 429/503 Handling 🛡️
+Demo-proof under stress.  
+**Decision:** Retry loop + 13s API delay; tells AI to "take a deep breath" when rate-limited.  
+**Why it Wins:** Reliable, reproducible demo without crashes.
+
+---
+
+## 👥 Contributors
+- **[Bhumi N Deshpande](https://github.com/bhumindeshpande8-spec)** 
+- **[Sejal Pednekar](https://github.com/Sejalp-18)** 
